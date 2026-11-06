@@ -12,6 +12,8 @@ body { direction: rtl; }
     url(assets/plantie/hero.jpg) center / cover no-repeat,
     linear-gradient(160deg, #4d7a3f 0%, #1f3a22 100%);
 }
+.p-hero--foot { background: url(assets/footvolley/hero.jpg) center / cover no-repeat, linear-gradient(160deg, #1f7a3a 0%, #f2c81c 100%); }
+.p-hero--foot .p-title { top: calc(var(--u) * 437); line-height: 1.26; }
 .p-hero--photo .logo img { filter: invert(1); }
 .p-hero--photo .theme-toggle { color: #fff; }
 .p-hero--photo .p-title { color: #fff; }
@@ -71,6 +73,8 @@ body { direction: rtl; }
 .btn:hover { background: var(--theme-text); color: var(--theme-bg); }
 .btn--solid { font-family: var(--font-body); font-size: calc(var(--u) * 28); padding: calc(var(--u) * 12) calc(var(--u) * 30); background: var(--theme-text); color: var(--theme-bg); }
 .btn--solid:hover { opacity: .85; }
+.cta--next-only { padding: calc(var(--u) * 94) 0 calc(var(--u) * 160); }
+.cta--next-only .cta__next { margin-top: 0; }
 .cta__next { margin-top: calc(var(--u) * 60); font-size: calc(var(--u) * 18); line-height: calc(var(--u) * 24); }
 .cta__next:hover { text-decoration: underline; text-underline-offset: .2em; }
 .btn:focus-visible, .cta__next:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
