@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Plantie — Dana Harati</title>
+  <meta name="description" content="מיתוג ו-UX/UI לאפליקציית זיהוי וטיפול בצמחי בית">
+  <meta name="color-scheme" content="light dark">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans&family=Heebo:wght@400;700&family=Arimo:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="project.css">
+  <script>
+    try { var t = localStorage.getItem("theme"); if (t === "day" || t === "night") document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body>
+  <header class="p-hero p-hero--photo">
+    <button class="theme-toggle" type="button" aria-label="החלפה בין מצב יום ללילה">
+      <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z"/></svg>
+      <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
+    </button>
+    <a href="index.html" class="logo" aria-label="Dana Harati — דף הבית"><img class="themed" src="assets/logo.svg" alt="Dana Harati" width="351" height="101"></a>
+    <h1 class="p-title">Plantie</h1>
+  </header>
+
+  <section class="info">
+    <div class="info__head">
+      <h2>מיתוג | UX/UI</h2>
+      <p>נעשה במסגרת קורס John Bryce<br>2026</p>
+    </div>
+    <div class="info__body">
+      <p>רבים מאיתנו מביאים צמח הביתה בהתלהבות, ואחרי כמה שבועות מגלים עלים צהובים, אדמה שנראית לא בסדר, ותחושה שאנחנו מנחשים. הידע קיים, אבל הוא מפוזר בין אתרים ואפליקציות, כתוב לרוב באנגלית ובשפה מקצועית, ולא אומר מה לעשות עכשיו. זה נכון במיוחד למי שרק התחיל: בני ובנות 16 עד 34 שמעצבים דירה חדשה ורוצים בית ירוק, אבל לא יודעים איזה צמח יש להם, כמה אור הוא צריך וכל כמה זמן להשקות אותו.</p>
+      <p>יצרתי את Plantie כדי להחזיר להם את הביטחון. מצלמים את הצמח, והאפליקציה מזהה אותו ומציגה דף ברור: שמו בעברית ובלטינית, כמה שמש הוא צריך, מתי להשקות, באיזו טמפרטורה לשמור עליו ומה רמת הקושי שלו. כשמשהו משתבש, אפשר לצלם שוב או לבחור תסמין, ולקבל כיוון ברור במקום ניחוש. ב"הצמחים שלי" רואים במבט אחד מי בריא ומי צריך השקיה, ודף הבית מזכיר מה לעשות היום. כך הטיפול בצמחים הופך משגרה מלחיצה לשגרה פשוטה, גם למי שמתחיל מאפס.</p>
+    </div>
+  </section>
+
+  <main>
+    <div class="row"><video src="assets/plantie/blobs.mp4" poster="assets/plantie/blobs.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video></div>
+    <div class="row"><img src="assets/plantie/collage.jpg" alt="" loading="lazy" style="object-position:50% 35%"></div>
+    <div class="row"><img src="assets/plantie/screens.jpg" alt="מסכי האפליקציה" loading="lazy"></div>
+    <div class="row row--split">
+      <div class="cell"><video src="assets/plantie/illustrations.mp4" poster="assets/plantie/illustrations.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video></div>
+      <div class="cell cell--green"><img class="cell__fit" src="assets/plantie/mockup.png" alt="" loading="lazy"></div>
+    </div>
+  </main>
+
+  <section class="cta">
+    <h2>רוצים לראות את זה בפעולה?</h2>
+    <div class="cta__buttons">
+      <a class="btn btn--solid" href="https://danaharati.github.io/plantie-case/" target="_blank" rel="noopener">לקייס סטדי המלא</a>
+      <a class="btn" href="https://danaharati.github.io/plantie/" target="_blank" rel="noopener">לאפליקציה</a>
+      <a class="btn" href="https://danaharati.github.io/plantie-landing-page/" target="_blank" rel="noopener">לדף נחיתה</a>
+    </div>
+    <a class="cta__next" href="ytong.html">לפרויקט הבא ←</a>
+  </section>
+  <script src="theme.js"></script>
+</body>
+</html>

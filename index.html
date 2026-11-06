@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dana Harati — Design beyond the screen</title>
+  <meta name="description" content="Graphic design, UX/UI and everything in between">
+  <meta name="color-scheme" content="light dark">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans&family=Special+Gothic+Expanded+One&family=Heebo:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    /* apply the saved theme before first paint */
+    document.documentElement.classList.add("js");
+    try { var t = localStorage.getItem("theme"); if (t === "day" || t === "night") document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body>
+  <header class="hero">
+    <button class="theme-toggle" type="button" aria-label="Switch between day and night mode">
+      <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z"/></svg>
+      <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
+    </button>
+
+    <a href="index.html" class="logo" aria-label="Dana Harati — home"><img class="themed" src="assets/logo.svg" alt="Dana Harati" width="413" height="119"></a>
+
+    <img class="float float--pen" src="assets/pen.png" alt="" width="318" height="1588">
+
+    <h1><span class="hero__design">DESIGN</span> <span class="hero__beyond"><span class="w">BEYOND</span> <span class="w">THE</span> <span class="w">SCREEN</span></span></h1>
+
+    <img class="float float--cursor" src="assets/cursor.png" alt="" width="749" height="821">
+
+    <p class="tagline">Graphic design, UX/UI and everything in between</p>
+
+    <a href="#projects" class="scroll-down" aria-label="Scroll to projects"><img class="themed" src="assets/arrow-down.svg" alt="" width="15" height="33"></a>
+
+    <nav class="nav" aria-label="Main">
+      <a href="#projects">Projects</a><span class="sep">|</span><a href="playground.html">Playground</a><span class="sep">|</span><a href="about.html">About Me</a>
+    </nav>
+  </header>
+
+  <main id="projects" class="projects">
+    <a class="card" href="#michsaf">
+      <span class="card__label"><img src="assets/arrow-left.svg" alt="" width="33" height="15"><span>Michsaf</span></span>
+    </a>
+    <a class="card" href="plantie.html">
+      <video class="card__media" src="assets/plantie-cover.mp4" poster="assets/plantie-cover.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
+      <span class="card__label"><img src="assets/arrow-left.svg" alt="" width="33" height="15"><span>Plantie</span></span>
+    </a>
+    <a class="card" href="ytong.html">
+      <img class="card__media" src="assets/ytong-cover.jpg" alt="" loading="lazy">
+      <span class="card__label"><img src="assets/arrow-left.svg" alt="" width="33" height="15"><span>קטלוג איטונג</span></span>
+    </a>
+    <a class="card" href="#puchiyuli">
+      <span class="card__label"><img src="assets/arrow-left.svg" alt="" width="33" height="15"><span>פוצ’יוולי</span></span>
+    </a>
+    <a class="card" href="#supermarket-cart">
+      <span class="card__label"><img src="assets/arrow-left.svg" alt="" width="33" height="15"><span>עגלת סופר</span></span>
+    </a>
+    <a class="card" href="#buchman-feder">
+      <span class="card__label"><img src="assets/arrow-left.svg" alt="" width="33" height="15"><span>בוכמן פדר</span></span>
+    </a>
+  </main>
+  <script src="theme.js"></script>
+  <script>
+    /* the pen and the cursor drift gently with the mouse, at different depths */
+    (function () {
+      if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      if (!matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+      var layers = [
+        { el: document.querySelector(".float--pen"),    depth: -34 },  /* design px; negative = moves against the mouse */
+        { el: document.querySelector(".float--cursor"), depth:  48 }
+      ];
+      var target = { x: 0, y: 0 }, pos = { x: 0, y: 0 };
+      addEventListener("pointermove", function (e) {
+        target.x = (e.clientX / innerWidth  - 0.5) * 2;   /* -1 … 1 */
+        target.y = (e.clientY / innerHeight - 0.5) * 2;
+      });
+      document.addEventListener("pointerleave", function () { target.x = 0; target.y = 0; });
+      (function tick() {
+        pos.x += (target.x - pos.x) * 0.07;               /* easing */
+        pos.y += (target.y - pos.y) * 0.07;
+        var u = innerWidth / 1920;
+        layers.forEach(function (l) {
+          l.el.style.translate = (pos.x * l.depth * u) + "px " + (pos.y * l.depth * u) + "px";
+        });
+        requestAnimationFrame(tick);
+      })();
+    })();
+
+    /* DESIGN is slower than the page on scroll, and its gradient fades out as you leave the hero */
+    (function () {
+      if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      var el = document.querySelector(".hero__design"), ticking = false;
+      function update() {
+        ticking = false;
+        var y = Math.max(0, scrollY), p = Math.min(1, y / (innerWidth / 1920 * 700));
+        el.style.translate = "0 " + (y * 0.35) + "px";
+        el.style.setProperty("--fade", p.toFixed(3));
+      }
+      addEventListener("scroll", function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+      update();
+    })();
+
+    /* project cards rise in as they enter the screen */
+    (function () {
+      var cards = document.querySelectorAll(".card");
+      if (!("IntersectionObserver" in window) || matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        cards.forEach(function (c) { c.classList.add("is-in"); });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
+      cards.forEach(function (c) { io.observe(c); });
+    })();
+  </script>
+</body>
+</html>
