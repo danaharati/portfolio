@@ -2,6 +2,9 @@
 
 .hero--about .nav a[aria-current="page"] { text-decoration: underline; text-underline-offset: 0.15em; }
 .hero--about .hero__design { width: calc(var(--u) * 1669); }
+/* floating pen + cursor (Figma desktop_about: pen centre 259,330.5; cursor 1640,515) */
+.hero--about .float--pen { left: calc(var(--u) * (259 - 35.01)); top: calc(var(--u) * (330.5 - 174.84)); }
+.hero--about .float--cursor { left: calc(var(--u) * 1640); top: calc(var(--u) * 515); }
 
 .about { position: relative; height: calc(var(--u) * 1085); overflow-x: clip; }
 
@@ -68,6 +71,9 @@
   .hero--about .hero__design { width: calc(var(--u) * 368); }
   .hero--about { height: calc(var(--u) * 400); }
   .hero--about .scroll-down { display: none; }
+  .hero--about .tagline { top: calc(var(--u) * 274); width: calc(var(--u) * 280); }
+  .hero--about .float--pen { left: calc(var(--u) * 61.44); top: calc(var(--u) * 118.43); }
+  .hero--about .float--cursor { left: calc(var(--u) * 293); top: calc(var(--u) * 309); }
   .about { height: auto; padding: calc(var(--u) * 24) calc(var(--u) * 24) calc(var(--u) * 24); display: flex; flex-direction: column; }
   .about__photo, .about__intro, .about__what, .marquee, .about__copy { position: static; }
   .about__photo { width: 100%; height: auto; aspect-ratio: 616 / 597; border-radius: calc(var(--u) * 16); }

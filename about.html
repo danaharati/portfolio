@@ -11,8 +11,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Google+Sans&family=Special+Gothic+Expanded+One&family=Heebo:wght@400&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20261118">
-  <link rel="stylesheet" href="about.css?v=20261118">
+  <link rel="stylesheet" href="style.css?v=20261118b">
+  <link rel="stylesheet" href="about.css?v=20261118b">
   <script>
     /* apply the saved theme before first paint */
     document.documentElement.classList.add("js");
@@ -30,9 +30,13 @@
 
     <a href="index.html" class="logo" aria-label="Dana Harati — home"><img class="themed" src="assets/logo.svg" alt="Dana Harati" width="413" height="119"></a>
 
+    <img class="float float--pen" src="assets/pen.png" alt="" width="318" height="1588">
+
     <h1><span class="hero__design">ABOUT</span> <span class="hero__beyond"><span class="w">I'M DANA.</span></span></h1>
 
-    <p class="tagline">From brand identity to interface to motion, one consistent visual language.</p>
+    <img class="float float--cursor" src="assets/cursor.png" alt="" width="749" height="821">
+
+    <p class="tagline">From brand identity to interface to motion, one consistent visual language</p>
 
     <nav class="nav" aria-label="Main">
       <a href="index.html#projects">Projects</a><a href="about.html" aria-current="page">About Me</a>
@@ -86,5 +90,31 @@
     <p class="about__copy">© 2026 Dana Harati</p>
   </main>
   <script src="theme.js"></script>
+  <script>
+    /* the pen and the cursor drift gently with the mouse, at different depths */
+    (function () {
+      if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      if (!matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+      var layers = [
+        { el: document.querySelector(".float--pen"),    depth: -34 },  /* design px; negative = moves against the mouse */
+        { el: document.querySelector(".float--cursor"), depth:  48 }
+      ];
+      var target = { x: 0, y: 0 }, pos = { x: 0, y: 0 };
+      addEventListener("pointermove", function (e) {
+        target.x = (e.clientX / innerWidth  - 0.5) * 2;   /* -1 … 1 */
+        target.y = (e.clientY / innerHeight - 0.5) * 2;
+      });
+      document.addEventListener("pointerleave", function () { target.x = 0; target.y = 0; });
+      (function tick() {
+        pos.x += (target.x - pos.x) * 0.07;               /* easing */
+        pos.y += (target.y - pos.y) * 0.07;
+        var u = innerWidth / 1920;
+        layers.forEach(function (l) {
+          l.el.style.translate = (pos.x * l.depth * u) + "px " + (pos.y * l.depth * u) + "px";
+        });
+        requestAnimationFrame(tick);
+      })();
+    })();
+  </script>
 </body>
 </html>
