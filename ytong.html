@@ -8,7 +8,7 @@
   <meta name="color-scheme" content="light dark">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Google+Sans&family=Heebo:wght@400;700&family=Arimo:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans&family=Special+Gothic+Expanded+One&family=Heebo:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="project.css">
@@ -17,38 +17,47 @@
   </script>
 </head>
 <body>
-  <div class="p-strip">
+  <header class="p-hero p-hero--ytong">
+    <video src="assets/ytong/hero.mp4" poster="assets/ytong/hero.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
     <button class="theme-toggle" type="button" aria-label="החלפה בין מצב יום ללילה">
       <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z"/></svg>
       <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
     </button>
     <a href="index.html" class="logo" aria-label="Dana Harati — דף הבית"><img class="themed" src="assets/logo.svg" alt="Dana Harati" width="351" height="101"></a>
-  </div>
-  <header class="p-hero p-hero--video">
-    <video src="assets/ytong/hero.mp4" poster="assets/ytong/hero.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
-    <h1 class="p-title">קטלוג איטונג</h1>
+    <h1 class="p-title p-title--ytong">ytong<br>Catalog</h1>
   </header>
 
   <section class="info">
-    <div class="info__head">
-      <h2>פרסום | עיצוב</h2>
-      <p>סטודיו IDAE<br>2025</p>
-    </div>
-    <div class="info__body">
-      <p>איטונג היא אחד המותגים הוותיקים והמזוהים ביותר בענף הבנייה בישראל, והקטלוג שלה לתשתיות ופיתוח סביבה, ריצופים, גדרות, מדרגות וקירות תמך, הוא כלי העבודה המרכזי של אדריכלים, אדריכלי נוף וקבלנים. עם השנים הוא הפך עמוס. האתגר היה לרענן קטלוג של יותר מ-180 עמודים בלי לאבד את הזהות שהמותג בנה במשך עשורים, כשהלוגו והצבעוניות הצהובה נשארים כפי שהם.</p>
-      <p>הפתרון היה ריסון: הצהוב נשאר צבע המותג אבל הפך מצבע דומיננטי לאקסנט מדויק של לשונית כותרת, פס דק ומספור עמודים, שחוזרים בעקביות לאורך הקטלוג. העמודים נוקו והורחבו, כך שתמונות מפרויקטים אמיתיים, גדולות ועם כיתוב לכל פרויקט, הן שמובילות ומראות את המוצר בשטח. תוכן עניינים עם היררכיה ברורה של פרקים ותתי-קטגוריות מקל על הניווט, ועטיפה דרמטית עם צילום מאקרו של אבן משתלבת נותנת לקטלוג נוכחות יוקרתית. כשהעיצוב נסוג, המוצר והמותג יוצאים מחוזקים.</p>
+    <p class="info__meta"><b>פרסום | עיצוב</b><span class="dot">·</span>סטודיו IDAE<span class="dot">·</span>2025</p>
+    <div class="info__cols">
+      <div class="info__body">
+        <p>איטונג היא אחד המותגים הוותיקים והמזוהים ביותר בענף הבנייה בישראל, והקטלוג שלה לתשתיות ופיתוח סביבה, ריצופים, גדרות, מדרגות וקירות תמך, הוא כלי העבודה המרכזי של אדריכלים, אדריכלי נוף וקבלנים. עם השנים הוא הפך עמוס. האתגר היה לרענן קטלוג של יותר מ-180 עמודים בלי לאבד את הזהות שהמותג בנה במשך עשורים, כשהלוגו והצבעוניות הצהובה נשארים כפי שהם.</p>
+      </div>
+      <div class="info__body">
+        <p>הפתרון היה ריסון: הצהוב נשאר צבע המותג אבל הפך מצבע דומיננטי לאקסנט מדויק של לשונית כותרת, פס דק ומספור עמודים, שחוזרים בעקביות לאורך הקטלוג. העמודים נוקו והורחבו, כך שתמונות מפרויקטים אמיתיים, גדולות ועם כיתוב לכל פרויקט, הן שמובילות ומראות את המוצר בשטח. תוכן עניינים עם היררכיה ברורה של פרקים ותתי-קטגוריות מקל על הניווט. כשהעיצוב נסוג, המוצר והמותג יוצאים מחוזקים.</p>
+      </div>
     </div>
   </section>
 
   <main>
     <div class="row"><img src="assets/ytong/catalog.jpg" alt="קטלוג איטונג" loading="lazy"></div>
     <div class="row row--split">
-      <div class="cell cell--yellow"><img class="cell__fit" src="assets/ytong/icons.svg" alt="" loading="lazy"></div>
+      <div class="tile">
+        <h3>עטיפה עם נוכחות</h3>
+        <p>צילום מאקרו של אבן משתלבת נותן לקטלוג נוכחות יוקרתית, והצהוב נשאר אקסנט מדויק.</p>
+      </div>
       <div class="cell"><img src="assets/ytong/reader.jpg" alt="" loading="lazy" style="object-position:50% 4.7%"></div>
     </div>
-    <div class="row row--split">
+    <div class="row row--split row--flip">
       <div class="cell"><img src="assets/ytong/phone.jpg" alt="" loading="lazy" style="object-position:50% 32%"></div>
+      <div class="tile tile--dark">
+        <h3>המוצר מוביל</h3>
+        <p>העמודים נוקו והורחבו. תמונות גדולות מפרויקטים אמיתיים, עם כיתוב לכל פרויקט, מראות את המוצר בשטח.</p>
+      </div>
+    </div>
+    <div class="row row--split">
       <div class="cell"><img src="assets/ytong/table.jpg" alt="" loading="lazy"></div>
+      <div class="cell cell--yellow"><img class="cell__fit" src="assets/ytong/icons.svg" alt="" loading="lazy"></div>
     </div>
   </main>
 
@@ -57,8 +66,14 @@
     <div class="cta__buttons">
       <a class="btn btn--solid" href="https://www.digi-catalog123.com/books/gayh/#p=1" target="_blank" rel="noopener">לקטלוג המלא</a>
     </div>
-    <a class="cta__next" href="footvolley.html">לפרויקט הבא ←</a>
+    <a class="cta__next" href="footvolley.html">הפרויקט הבא: פוצ’יוולי ←</a>
   </section>
+
+  <footer class="footer">
+    <p class="footer__big">LET'S TALK</p>
+    <p class="footer__links"><a href="mailto:dana.harati@gmail.com">Email</a> | <a href="https://www.linkedin.com/in/dana-harati-5a9976259" target="_blank" rel="noopener">LinkedIn</a> | <a href="https://www.instagram.com/dana_harati" target="_blank" rel="noopener">Instagram</a> | <span>CV</span></p>
+    <p class="footer__copy">© 2026 Dana Harati</p>
+  </footer>
   <script src="theme.js"></script>
 </body>
 </html>

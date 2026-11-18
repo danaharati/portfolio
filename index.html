@@ -37,16 +37,18 @@
     <a href="#projects" class="scroll-down" aria-label="Scroll to projects"><img class="themed" src="assets/arrow-down.svg" alt="" width="15" height="33"></a>
 
     <nav class="nav" aria-label="Main">
-      <a href="#projects">Projects</a><span class="sep">|</span><a href="playground.html">Playground</a><span class="sep">|</span><a href="about.html">About Me</a>
+      <a href="#projects">Projects</a><a href="about.html">About Me</a>
     </nav>
   </header>
 
   <main id="projects" class="projects">
-    <a class="card" href="#michsaf">
+    <a class="card card--white" href="#michsaf">
+      <img class="card__logo" src="assets/michsaf-logo.svg" alt="Michsaf" width="723" height="643">
       <span class="card__label"><img src="assets/arrow-left.svg" alt="" width="33" height="15"><span>Michsaf</span></span>
     </a>
-    <a class="card" href="plantie.html">
-      <video class="card__media" src="assets/plantie-cover.mp4" poster="assets/plantie-cover.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
+    <a class="card card--hover-video" href="plantie.html">
+      <video class="card__media" src="assets/plantie-cover.mp4" muted playsinline preload="metadata" aria-hidden="true"></video>
+      <img class="card__media card__poster" src="assets/plantie-cover.jpg" alt="">
       <span class="card__label"><img src="assets/arrow-left.svg" alt="" width="33" height="15"><span>Plantie</span></span>
     </a>
     <a class="card" href="ytong.html">
@@ -54,6 +56,7 @@
       <span class="card__label"><img src="assets/arrow-left.svg" alt="" width="33" height="15"><span>קטלוג איטונג</span></span>
     </a>
     <a class="card" href="footvolley.html">
+      <img class="card__media" src="assets/footvolley/logo.jpg" alt="" loading="lazy">
       <span class="card__label"><img src="assets/arrow-left.svg" alt="" width="33" height="15"><span>פוצ’יוולי</span></span>
     </a>
     <a class="card" href="#supermarket-cart">
@@ -63,6 +66,12 @@
       <span class="card__label"><img src="assets/arrow-left.svg" alt="" width="33" height="15"><span>בוכמן פדר</span></span>
     </a>
   </main>
+
+  <footer class="footer">
+    <p class="footer__big">LET'S TALK</p>
+    <p class="footer__links"><a href="mailto:dana.harati@gmail.com">Email</a> | <a href="https://www.linkedin.com/in/dana-harati-5a9976259" target="_blank" rel="noopener">LinkedIn</a> | <a href="https://www.instagram.com/dana_harati" target="_blank" rel="noopener">Instagram</a> | <span>CV</span></p>
+    <p class="footer__copy">© 2026 Dana Harati</p>
+  </footer>
   <script src="theme.js"></script>
   <script>
     /* the pen and the cursor drift gently with the mouse, at different depths */
@@ -117,6 +126,29 @@
         });
       }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
       cards.forEach(function (c) { io.observe(c); });
+    })();
+
+    /* cards with a hover video: the logo still shows until you hover, then the animation plays from the start */
+    (function () {
+      if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      var canHover = matchMedia("(hover: hover) and (pointer: fine)").matches;
+      document.querySelectorAll(".card--hover-video").forEach(function (card) {
+        var v = card.querySelector("video");
+        function start() { v.currentTime = 0; var p = v.play(); if (p && p.catch) p.catch(function () {}); card.classList.add("is-playing"); }
+        function stop() { card.classList.remove("is-playing"); v.pause(); }
+        v.addEventListener("ended", function () { card.classList.remove("is-playing"); });
+        if (canHover) {
+          card.addEventListener("pointerenter", start);
+          card.addEventListener("pointerleave", stop);
+          card.addEventListener("focus", start);
+          card.addEventListener("blur", stop);
+        } else if ("IntersectionObserver" in window) {
+          /* phones have no hover: play once when the card is mostly on screen */
+          new IntersectionObserver(function (es) {
+            es.forEach(function (e) { if (e.isIntersecting) start(); else stop(); });
+          }, { threshold: 0.7 }).observe(card);
+        }
+      });
     })();
   </script>
 </body>
