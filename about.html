@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Me — Dana Harati</title>
+  <meta name="description" content="Brand, UX/UI and motion designer. I build brand identities and a consistent visual language across digital, social, print and retail.">
+  <meta name="color-scheme" content="light dark">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans&family=Special+Gothic+Expanded+One&family=Heebo:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="about.css">
+  <script>
+    /* apply the saved theme before first paint */
+    document.documentElement.classList.add("js");
+    try { var t = localStorage.getItem("theme"); if (t === "day" || t === "night") document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body>
+  <header class="hero hero--about">
+    <button class="theme-toggle" type="button" aria-label="Switch between day and night mode">
+      <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z"/></svg>
+      <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
+    </button>
+
+    <a class="back" href="index.html" aria-label="Back to home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+
+    <a href="index.html" class="logo" aria-label="Dana Harati — home"><img class="themed" src="assets/logo.svg" alt="Dana Harati" width="413" height="119"></a>
+
+    <h1><span class="hero__design">ABOUT</span> <span class="hero__beyond"><span class="w">I'M DANA.</span></span></h1>
+
+    <p class="tagline">From brand identity to interface to motion, one consistent visual language.</p>
+
+    <nav class="nav" aria-label="Main">
+      <a href="index.html#projects">Projects</a><a href="about.html" aria-current="page">About Me</a>
+    </nav>
+  </header>
+
+  <main class="about">
+    <img class="about__photo" src="assets/dana.jpg" alt="Dana Harati" width="616" height="597">
+
+    <section class="about__intro">
+      <h2>Nice to Meet You!</h2>
+      <p>I'm a brand, UX/UI and motion designer. I build brand identities and a consistent visual language across digital, social, print and retail, and design websites, apps and landing pages, from wireframes to polished interfaces.</p>
+      <p>I work as a brand and marketing designer at IDEA Branding &amp; Advertising, and recently completed a UX/UI course with a specialization in AI product design at John Bryce, with honors.</p>
+      <p class="about__tools">Tools &nbsp;·&nbsp; Figma, Illustrator, Photoshop, InDesign, After Effects</p>
+      <div class="about__buttons">
+        <a class="btn btn--solid" href="mailto:dana.harati@gmail.com">Let's talk</a>
+        <a class="btn" href="assets/Dana-Harati-CV.pdf" target="_blank" rel="noopener" download="Dana-Harati-CV.pdf">Download CV</a>
+        <a class="round" href="https://www.instagram.com/dana_harati" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a class="round" href="https://www.linkedin.com/in/dana-harati-5a9976259" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <section class="about__what">
+      <h2>What I do</h2>
+      <div class="about__cols">
+        <div class="what">
+          <h3>Branding &amp; identity</h3>
+          <p>Brand identities and a consistent visual language across digital, social, print and retail.</p>
+        </div>
+        <div class="what">
+          <h3>UX/UI</h3>
+          <p>Websites, apps and landing pages, from wireframes to polished interfaces and thoughtful user experiences.</p>
+        </div>
+        <div class="what">
+          <h3>Motion</h3>
+          <p>Animation and motion in After Effects that gives interfaces and brand content life.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>LET'S TALK</span><span>LET'S TALK</span><span>LET'S TALK</span><span>LET'S TALK</span><span>LET'S TALK</span><span>LET'S TALK</span>
+        <span>LET'S TALK</span><span>LET'S TALK</span><span>LET'S TALK</span><span>LET'S TALK</span><span>LET'S TALK</span><span>LET'S TALK</span>
+      </div>
+    </div>
+    <p class="about__copy">© 2026 Dana Harati</p>
+  </main>
+  <script src="theme.js"></script>
+</body>
+</html>

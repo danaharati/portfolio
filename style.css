@@ -340,6 +340,9 @@ html.js .card.is-in:nth-child(even) { transition-delay: .12s; }
   opacity: .6;
 }
 
+/* כפתור חזרה לדף הבית — במובייל בלבד, בכל הדפים חוץ מדף הבית */
+.back { display: none; }
+
 /* ---------- Mobile (Figma: mobile_home, 390px wide) ---------- */
 @media (max-width: 800px) {
   :root { --u: calc(100vw / 390); }
@@ -347,6 +350,8 @@ html.js .card.is-in:nth-child(even) { transition-delay: .12s; }
   .logo { top: calc(var(--u) * 16); width: calc(var(--u) * 150); height: calc(var(--u) * 43.2); }
   .theme-toggle { top: calc(var(--u) * 18); right: calc(var(--u) * 15.9); width: calc(var(--u) * 39); height: calc(var(--u) * 39); }
   .nav { display: none; }
+  .back { position: absolute; z-index: 3; top: calc(var(--u) * 18); right: calc(var(--u) * 15.9); display: flex; align-items: center; justify-content: center; width: calc(var(--u) * 39); height: calc(var(--u) * 39); color: var(--theme-text); }
+  .back svg { width: calc(var(--u) * 24); height: calc(var(--u) * 24); display: block; }
   .hero__design { top: calc(var(--u) * 161); width: calc(var(--u) * 368); font-size: calc(var(--u) * 80); }
   .hero__beyond { top: calc(var(--u) * 220); font-size: calc(var(--u) * 38); white-space: normal; }
   .hero__beyond .w:first-child { display: block; }

@@ -142,3 +142,13 @@ body { direction: rtl; }
   .cta__next { padding-top: calc(var(--u) * 13); font-size: calc(var(--u) * 18); line-height: calc(var(--u) * 26); }
   .cta--next-only { padding: calc(var(--u) * 40) 0; }
 }
+
+/* "Ytong / Catalog": שתי שורות בדסקטופ, שורה אחת במובייל (Figma) */
+@media (max-width: 800px) { .br-d { display: none; } }
+
+/* מובייל: כפתור החזרה מימין (RTL), מתג יום/לילה עובר לשמאל; צבעים לפי ה-hero */
+@media (max-width: 800px) {
+  .p-hero .theme-toggle { right: auto; left: calc(var(--u) * 15.9); }
+  .p-hero--photo .back { color: #fff; }
+  .p-hero--ytong .back { color: #000; }
+}

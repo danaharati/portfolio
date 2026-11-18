@@ -1,0 +1,91 @@
+/* About Me — לפי Figma: desktop_about / day + night (1920px). --u = 1px בפיגמה. */
+
+.hero--about .nav a[aria-current="page"] { text-decoration: underline; text-underline-offset: 0.15em; }
+.hero--about .hero__design { width: calc(var(--u) * 1669); }
+
+.about { position: relative; height: calc(var(--u) * 1085); overflow-x: clip; }
+
+.about__photo {
+  position: absolute; z-index: 1;
+  left: calc(var(--u) * 1117); top: calc(var(--u) * -88);
+  width: calc(var(--u) * 616); height: calc(var(--u) * 597);
+  border-radius: calc(var(--u) * 30);
+  object-fit: cover; background: #000;
+}
+
+.about__intro {
+  position: absolute; left: calc(var(--u) * 188); top: 0;
+  width: calc(var(--u) * 723);
+  display: flex; flex-direction: column; gap: calc(var(--u) * 20);
+}
+.about__intro h2 { font-size: calc(var(--u) * 44); font-weight: 700; line-height: calc(var(--u) * 56); }
+.about__intro p { font-size: calc(var(--u) * 20); line-height: calc(var(--u) * 32); }
+.about__buttons { display: flex; align-items: center; gap: calc(var(--u) * 24); padding-top: calc(var(--u) * 12); }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  height: calc(var(--u) * 52); padding: 0 calc(var(--u) * 25);
+  font-family: var(--font-body); font-size: calc(var(--u) * 20); font-weight: 700; line-height: 1; white-space: nowrap;
+  border: calc(var(--u) * 2) solid var(--theme-text); border-radius: calc(var(--u) * 140);
+  transition: background-color .2s, color .2s, opacity .2s;
+}
+.btn:hover { background: var(--theme-text); color: var(--theme-bg); }
+.btn--solid { background: var(--theme-text); color: var(--theme-bg); }
+.btn--solid:hover { opacity: .85; }
+.btn[aria-disabled="true"] { cursor: default; }
+.btn:focus-visible, .round:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+
+.round {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: calc(var(--u) * 52); height: calc(var(--u) * 52);
+  border-radius: 50%; background: var(--theme-text); color: var(--theme-bg);
+  transition: opacity .2s, transform .2s;
+}
+.round svg { width: calc(var(--u) * 24); height: calc(var(--u) * 24); }
+.round:hover { opacity: .85; transform: translateY(-2px); }
+
+.about__what { position: absolute; left: calc(var(--u) * 188); top: calc(var(--u) * 570); width: calc(var(--u) * 1545); }
+.about__what > h2 { font-size: calc(var(--u) * 30); font-weight: 700; line-height: calc(var(--u) * 38); margin-bottom: calc(var(--u) * 36); }
+.about__cols { display: grid; grid-template-columns: repeat(3, calc(var(--u) * 482)); column-gap: calc(var(--u) * 49.5); }
+.what::before { content: ""; display: block; width: calc(var(--u) * 64); height: calc(var(--u) * 6); background: var(--purple); margin-bottom: calc(var(--u) * 14); }
+.what h3 { font-size: calc(var(--u) * 30); font-weight: 700; line-height: calc(var(--u) * 38); margin-bottom: calc(var(--u) * 14); }
+.what p { font-size: calc(var(--u) * 20); line-height: calc(var(--u) * 32); }
+
+.marquee { position: absolute; left: 0; right: 0; top: calc(var(--u) * 936); overflow: hidden; }
+.marquee__track { display: flex; width: max-content; animation: marquee 40s linear infinite; }
+.marquee__track span {
+  flex: none; padding-right: calc(var(--u) * 80);
+  font-family: var(--font-display); font-size: calc(var(--u) * 50); line-height: calc(var(--u) * 50);
+  color: var(--purple); white-space: nowrap;
+}
+@keyframes marquee { to { transform: translateX(-50%); } }
+.about__copy { position: absolute; left: 0; right: 0; top: calc(var(--u) * 1022); text-align: center; font-size: calc(var(--u) * 16); line-height: calc(var(--u) * 24); opacity: .6; }
+
+@media (prefers-reduced-motion: reduce) { .marquee__track { animation: none; } }
+
+/* ---------- מובייל (אין פריים מובייל בפיגמה — לפי שפת העיצוב של mobile_home, 390px) ---------- */
+@media (max-width: 800px) {
+  .hero--about .hero__design { width: calc(var(--u) * 368); }
+  .hero--about { height: calc(var(--u) * 400); }
+  .hero--about .scroll-down { display: none; }
+  .hero--about .theme-toggle { right: auto; left: calc(var(--u) * 15.9); }
+  .about { height: auto; padding: calc(var(--u) * 24) calc(var(--u) * 24) calc(var(--u) * 24); display: flex; flex-direction: column; }
+  .about__photo, .about__intro, .about__what, .marquee, .about__copy { position: static; }
+  .about__photo { width: 100%; height: auto; aspect-ratio: 616 / 597; border-radius: calc(var(--u) * 16); }
+  .about__intro { width: auto; margin-top: calc(var(--u) * 32); gap: calc(var(--u) * 16); }
+  .about__intro h2 { font-size: calc(var(--u) * 30); line-height: calc(var(--u) * 38); }
+  .about__intro p { font-size: calc(var(--u) * 16); line-height: calc(var(--u) * 26); }
+  .about__buttons { gap: calc(var(--u) * 8); padding-top: calc(var(--u) * 8); }
+  .btn { height: calc(var(--u) * 40); padding: 0 calc(var(--u) * 16); font-size: calc(var(--u) * 15); }
+  .round { width: calc(var(--u) * 40); height: calc(var(--u) * 40); }
+  .round svg { width: calc(var(--u) * 20); height: calc(var(--u) * 20); }
+  .about__what { width: auto; margin-top: calc(var(--u) * 48); }
+  .about__what > h2 { font-size: calc(var(--u) * 24); line-height: calc(var(--u) * 30); margin-bottom: calc(var(--u) * 24); }
+  .about__cols { display: flex; flex-direction: column; gap: calc(var(--u) * 28); }
+  .what::before { width: calc(var(--u) * 48); height: calc(var(--u) * 5); margin-bottom: calc(var(--u) * 12); }
+  .what h3 { font-size: calc(var(--u) * 22); line-height: calc(var(--u) * 28); margin-bottom: calc(var(--u) * 8); }
+  .what p { font-size: calc(var(--u) * 16); line-height: calc(var(--u) * 26); }
+  .marquee { margin: calc(var(--u) * 56) calc(var(--u) * -24) 0; }
+  .marquee__track span { font-size: calc(var(--u) * 28); line-height: calc(var(--u) * 32); padding-right: calc(var(--u) * 44); }
+  .about__copy { margin-top: calc(var(--u) * 24); font-size: calc(var(--u) * 12); line-height: calc(var(--u) * 18); }
+}
