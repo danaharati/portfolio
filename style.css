@@ -289,7 +289,8 @@ html.js .card.is-in:nth-child(even) { transition-delay: .12s; }
   width: calc(var(--u) * 33);
   height: calc(var(--u) * 15);
 }
-.card:hover .card__label { text-decoration: underline; text-underline-offset: 0.15em; }
+.card__label img { transition: transform .3s ease; }
+.card:hover .card__label img, .card:focus-visible .card__label img { transform: translateX(calc(var(--u) * -10)); }
 
 /* Michsaf card: white, with the logo centred */
 .card--white { background: var(--color-white); }
@@ -350,7 +351,7 @@ html.js .card.is-in:nth-child(even) { transition-delay: .12s; }
   .logo { top: calc(var(--u) * 16); width: calc(var(--u) * 150); height: calc(var(--u) * 43.2); }
   .theme-toggle { top: calc(var(--u) * 18); right: calc(var(--u) * 15.9); width: calc(var(--u) * 39); height: calc(var(--u) * 39); }
   .nav { display: none; }
-  .back { position: absolute; z-index: 3; top: calc(var(--u) * 18); right: calc(var(--u) * 15.9); display: flex; align-items: center; justify-content: center; width: calc(var(--u) * 39); height: calc(var(--u) * 39); color: var(--theme-text); }
+  .back { position: absolute; z-index: 3; top: calc(var(--u) * 18); left: calc(var(--u) * 15.9); display: flex; align-items: center; justify-content: center; width: calc(var(--u) * 39); height: calc(var(--u) * 39); color: var(--theme-text); }
   .back svg { width: calc(var(--u) * 24); height: calc(var(--u) * 24); display: block; }
   .hero__design { top: calc(var(--u) * 161); width: calc(var(--u) * 368); font-size: calc(var(--u) * 80); }
   .hero__beyond { top: calc(var(--u) * 220); font-size: calc(var(--u) * 38); white-space: normal; }

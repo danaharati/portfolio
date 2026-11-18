@@ -68,7 +68,6 @@
   .hero--about .hero__design { width: calc(var(--u) * 368); }
   .hero--about { height: calc(var(--u) * 400); }
   .hero--about .scroll-down { display: none; }
-  .hero--about .theme-toggle { right: auto; left: calc(var(--u) * 15.9); }
   .about { height: auto; padding: calc(var(--u) * 24) calc(var(--u) * 24) calc(var(--u) * 24); display: flex; flex-direction: column; }
   .about__photo, .about__intro, .about__what, .marquee, .about__copy { position: static; }
   .about__photo { width: 100%; height: auto; aspect-ratio: 616 / 597; border-radius: calc(var(--u) * 16); }

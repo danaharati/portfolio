@@ -146,9 +146,8 @@ body { direction: rtl; }
 /* "Ytong / Catalog": שתי שורות בדסקטופ, שורה אחת במובייל (Figma) */
 @media (max-width: 800px) { .br-d { display: none; } }
 
-/* מובייל: כפתור החזרה מימין (RTL), מתג יום/לילה עובר לשמאל; צבעים לפי ה-hero */
+/* מובייל: צבעי כפתור החזרה לפי ה-hero */
 @media (max-width: 800px) {
-  .p-hero .theme-toggle { right: auto; left: calc(var(--u) * 15.9); }
   .p-hero--photo .back { color: #fff; }
   .p-hero--ytong .back { color: #000; }
 }
