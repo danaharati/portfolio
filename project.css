@@ -1,13 +1,12 @@
 /* דפי פרויקט — משתמשים ב-style.css (משתני נושא, לוגו, מתג, פוטר) ומוסיפים את הפריסה לפי הפיגמה:
    דסקטופ 1920px, מובייל 390px. --u = יחידת עיצוב אחת (1px בפיגמה). */
 html { scroll-behavior: auto; }
-body { direction: rtl; }
 
 /* ---------- Hero ---------- */
 .p-hero { position: relative; height: calc(var(--u) * 900); overflow: hidden; }
-.p-hero .logo, .p-hero .theme-toggle { z-index: 3; }
+.p-hero .logo { z-index: 3; }
 
-/* Plantie / Footvolley: תמונה מלאה, לוגו ומתג בלבן */
+/* Plantie / Footvolley: full-bleed photo, white logo */
 .p-hero--plantie {
   background:
     url(assets/plantie/hero.jpg) center / cover no-repeat,
@@ -19,13 +18,11 @@ body { direction: rtl; }
     linear-gradient(160deg, #3aa7e6 0%, #f2d9a0 100%);
 }
 .p-hero--photo .logo img { filter: invert(1); }
-.p-hero--photo .theme-toggle { color: #fff; }
 
 /* Ytong: רקע צהוב + וידאו */
 .p-hero--ytong { background: #ffc42e; }
 .p-hero--ytong video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .p-hero--ytong .logo img { filter: none; }
-.p-hero--ytong .theme-toggle { color: #000; }
 
 .p-title {
   position: absolute;
@@ -67,15 +64,14 @@ body { direction: rtl; }
 /* משבצת טקסט עם פס צבע */
 .tile {
   --accent: #ffc42e;
-  direction: rtl;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  padding: 0 calc(var(--u) * 130);
+  padding: 0 calc(var(--u) * 130) 0 calc(var(--u) * 190);
   background: #f6e8e1;
   color: #000;
-  text-align: right;
+  text-align: left;
 }
 .tile::before { content: ""; width: calc(var(--u) * 64); height: calc(var(--u) * 6); margin-bottom: calc(var(--u) * 36); background: var(--accent); }
 .tile h3 { max-width: calc(var(--u) * 580); font-size: calc(var(--u) * 44); line-height: calc(var(--u) * 56); font-weight: 700; }
@@ -128,7 +124,7 @@ body { direction: rtl; }
   .cell--green .cell__fit { top: calc(var(--u) * 17.9); width: calc(var(--u) * 280.3); height: calc(var(--u) * 239.1); }
   .cell--yellow .cell__fit { top: calc(var(--u) * 46); width: calc(var(--u) * 280.3); height: calc(var(--u) * 182.7); }
 
-  .tile { padding: 0 calc(var(--u) * 24); }
+  .tile { padding: 0 calc(var(--u) * 24) 0 calc(var(--u) * 36); }
   .tile::before { width: calc(var(--u) * 40); height: calc(var(--u) * 4); margin-bottom: calc(var(--u) * 20); }
   .tile h3 { max-width: none; font-size: calc(var(--u) * 26); line-height: calc(var(--u) * 34); }
   .tile p { max-width: none; margin-top: calc(var(--u) * 10); font-size: calc(var(--u) * 16); line-height: calc(var(--u) * 26); }
@@ -136,9 +132,11 @@ body { direction: rtl; }
   .info + main + .cta { padding-top: calc(var(--u) * 40); }
   .cta { gap: calc(var(--u) * 24); padding: calc(var(--u) * 40) 0; }
   .cta h2 { font-size: calc(var(--u) * 20); line-height: calc(var(--u) * 28); }
-  .cta__buttons { flex-wrap: wrap; gap: calc(var(--u) * 11); max-width: calc(var(--u) * 290); }
+  .cta__buttons { flex-wrap: wrap; gap: calc(var(--u) * 11); max-width: calc(var(--u) * 275); }
+  .cta__buttons .btn { flex: 0 0 100%; text-align: center; }
+  .btn--solid { order: -1; }
   .btn { font-size: calc(var(--u) * 17); padding: calc(var(--u) * 9.8) calc(var(--u) * 21.3); border-width: calc(var(--u) * 1.7); }
-  .btn--solid { flex: 0 0 100%; text-align: center; font-size: calc(var(--u) * 23.8); padding: calc(var(--u) * 10.2) calc(var(--u) * 25.5); }
+  .btn--solid { font-size: calc(var(--u) * 20); padding: calc(var(--u) * 10.2) calc(var(--u) * 25.5); }
   .cta__next { padding-top: calc(var(--u) * 13); font-size: calc(var(--u) * 18); line-height: calc(var(--u) * 26); }
   .cta--next-only { padding: calc(var(--u) * 40) 0; }
 }
