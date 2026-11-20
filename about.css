@@ -1,6 +1,5 @@
 /* About Me — לפי Figma: desktop_about / day + night (1920px). --u = 1px בפיגמה. */
 
-.hero--about .nav a[aria-current="page"] { text-decoration: underline; text-underline-offset: 0.15em; }
 .hero--about .hero__design { width: calc(var(--u) * 1669); }
 /* floating pen + cursor (Figma desktop_about: pen centre 259,330.5; cursor 1640,515) */
 .hero--about .float--pen { left: calc(var(--u) * (259 - 35.01)); top: calc(var(--u) * (330.5 - 174.84)); }

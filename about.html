@@ -11,8 +11,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Google+Sans&family=Special+Gothic+Expanded+One&family=Heebo:wght@400&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20261119a">
-  <link rel="stylesheet" href="about.css?v=20261119a">
+  <link rel="stylesheet" href="style.css?v=20261120a">
+  <link rel="stylesheet" href="menu.css?v=20261120a">
+  <link rel="stylesheet" href="about.css?v=20261120a">
   <script>
     /* apply the saved theme before first paint */
     document.documentElement.classList.add("js");
@@ -20,14 +21,32 @@
   </script>
 </head>
 <body>
+  <div class="mmenu" id="mobile-menu" aria-hidden="true" aria-label="Menu" role="dialog">
+    <a href="index.html" class="mmenu__logo" aria-label="Dana Harati — home"><img class="themed" src="assets/logo.svg" alt="Dana Harati" width="351" height="101"></a>
+    <button class="mmenu__close" type="button" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+    <ul class="mmenu__links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" aria-current="page">About Me</a></li>
+      <li><a href="plantie.html">Plantie</a></li>
+      <li><span>Michsaf</span></li>
+      <li><a href="ytong.html">Ytong Catalog</a></li>
+      <li><a href="footvolley.html">Footvolley Club</a></li>
+    </ul>
+    <div class="mmenu__social">
+      <a class="mmenu__round" href="mailto:dana.harati@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></a>
+      <a class="mmenu__round" href="https://www.instagram.com/dana_harati" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+      <a class="mmenu__round" href="https://www.linkedin.com/in/dana-harati-5a9976259" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+      <a class="mmenu__cv" href="assets/Dana-Harati-CV.pdf" target="_blank" rel="noopener" download="Dana-Harati-CV.pdf">CV</a>
+    </div>
+  </div>
   <header class="hero hero--about">
     <button class="theme-toggle" type="button" aria-label="Switch between day and night mode">
       <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z"/></svg>
       <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
     </button>
 
-    <a class="back" href="index.html" aria-label="Back to home"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></a>
 
+    <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><svg viewBox="0 0 24 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M1 1.5h22M1 8h22M1 14.5h22"/></svg></button>
     <a href="index.html" class="logo" aria-label="Dana Harati — home"><img class="themed" src="assets/logo.svg" alt="Dana Harati" width="413" height="119"></a>
 
     <img class="float float--pen" src="assets/pen.png" alt="" width="318" height="1588">
@@ -48,9 +67,8 @@
 
     <section class="about__intro">
       <h2>Nice to Meet You!</h2>
-      <p>I'm a brand, UX/UI and motion designer. I build brand identities and a consistent visual language across digital, social, print and retail, and design websites, apps and landing pages, from wireframes to polished interfaces.</p>
+      <p>I'm a brand, UX/UI and motion designer. I build brand identities and a consistent visual language across digital, social, print and retail, design websites, apps and landing pages, from wireframes to polished interfaces.</p>
       <p>I work as a brand and marketing designer at IDEA Branding &amp; Advertising, and recently completed a UX/UI course with a specialization in AI product design at John Bryce, with honors.</p>
-      <p class="about__tools">Tools &nbsp;·&nbsp; Figma, Illustrator, Photoshop, InDesign, After Effects</p>
       <div class="about__buttons">
         <a class="btn btn--solid" href="mailto:dana.harati@gmail.com">Let's talk</a>
         <a class="btn" href="assets/Dana-Harati-CV.pdf" target="_blank" rel="noopener" download="Dana-Harati-CV.pdf">Download CV</a>
@@ -90,6 +108,7 @@
     <p class="about__copy">© 2026 Dana Harati</p>
   </main>
   <script src="theme.js"></script>
+  <script src="menu.js"></script>
   <script>
     /* the pen and the cursor drift gently with the mouse, at different depths */
     (function () {

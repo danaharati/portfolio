@@ -132,7 +132,7 @@ img { display: block; }
   white-space: nowrap;
   text-align: left;
 }
-.nav a:hover { text-decoration: underline; text-underline-offset: 0.15em; }
+.nav a:not([aria-current="page"]):hover { text-decoration: underline; text-underline-offset: 0.15em; }
 
 /* "About Me" button: phones only (the text nav above is hidden there) */
 .about-btn { display: none; }
